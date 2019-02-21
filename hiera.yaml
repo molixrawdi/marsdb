@@ -1,0 +1,15 @@
+---
+version: 5
+defaults:
+  datadir: data
+hierarchy:
+  -
+    name: "Mongo module class: per-node, per-datacenter, common"
+    options:
+    paths:
+      - "nodes/%{trusted.certname}.pp"
+      - "role/%{::role}.pp"
+      - "profile/%{::profile}.pp"
+      #- "%{::environment}.yaml"
+      - "os/%{::osfamily}.yaml"
+      - common.yaml
